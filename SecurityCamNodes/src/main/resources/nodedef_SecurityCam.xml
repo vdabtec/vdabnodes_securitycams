@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<nodedefs>   
+<nodedef name="SecurityCamSource" class="vdab.extnodes.securitycam.SecurityCamSource">
+</nodedef>
+<nodedef name="SecurityCamService" class="vdab.extnodes.securitycam.SecurityCamService">
+  	<attr name="ConsumedEventTypes">Trigger</attr>
+    <attr name="PublishedEventTypes">File</attr>
+    <attr name="NodeDescTemplate">from ${Host}:${Port}</attr>
+    <attr name="NodeOverview">Prototype which reads captures images from a Foscam Security Camera using appropriate HTTP posts. The address and port must be accessible and specified.</attr>
+    <attr name="NodeQuality" >Prototype</attr>   
+	<datadef name="User">
+		<attr name="EditOrder" type="Integer">2</attr>
+		<attr name="Category">Required</attr>
+		<attr name="Desc">An user email account</attr>				
+	</datadef>
+    <datadef  name="Password">
+		<attr name="EditOrder" type="Integer">3</attr>
+		<attr name="Category">Required</attr>
+		<attr name="SpecialType">Password</attr>
+		<attr name="Desc">The user email account password. Saved passwords will be obfuscated.</attr>		
+	</datadef>
+	<datadef name="Filename">
+		<attr name="Category">Required</attr>
+		<attr name="EditWhileRunning" type="Boolean">true</attr>
+		<attr name="Desc" >The image filename which can inculde ${DataTime} to add a timestamp.</attr>					
+	</datadef>
+	<datadef name="Host">
+		<attr name="Category">Required</attr>
+		<attr name="EditWhileRunning" type="Boolean">true</attr>
+	</datadef>
+	<datadef name="Port">
+		<attr name="Category">Required</attr>
+		<attr name="EditWhileRunning" type="Boolean">true</attr>
+	</datadef>
+	<datadef name="Directory">
+		<attr name="Category">Required</attr>
+	</datadef>
+	<datadef name="URL">
+		<attr name="Category">Hidden</attr>
+	</datadef>
+</nodedef>
+</nodedefs>
